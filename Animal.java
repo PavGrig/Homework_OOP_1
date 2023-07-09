@@ -3,6 +3,8 @@ package ООП.Lesson_1;
 // inteliij idea
 
 public class Animal {
+
+    protected final String CLASS_NAME = "The " + getClass().getSimpleName();
     private String name;
     private Integer age;
     private String vaccination;
@@ -45,5 +47,7 @@ public class Animal {
         // TODO Auto-generated method stub
         return String.format("Animal: {name = %s, owner = %s}", name, owner);
     }
-    
+    public String getClassName() {
+        return this.CLASS_NAME;
+    }
 }

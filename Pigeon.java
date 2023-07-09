@@ -1,6 +1,6 @@
 package ООП.Lesson_1;
 
-public class Pigeon extends Animal {
+public class Pigeon extends Animal implements Soundable, Flyable, Runable {
 
     public Pigeon(String color, String species, Integer legsCount) {
         super(color, species, legsCount);
@@ -12,5 +12,19 @@ public class Pigeon extends Animal {
         System.out.println("Я не умею плавать!!!");
     }
 
+    @Override
+    public int GetRunSpeed() {
+        return 2;
+    }
+
+    @Override
+    public void Sound() {
+        System.out.println("Голуби говорят Курлык!!!");
+    }
+
+    @Override
+    public int GetFlySpeed() {
+        return 10;
+    }
 }
 

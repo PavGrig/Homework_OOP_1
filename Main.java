@@ -16,7 +16,8 @@ public class Main {
         Animal0 animal0 = new Animal0(null, null, null, null, null, null, null);
         animal0.getAge();
         System.out.println(animal0);
-        Animal cat = new Animal0();
+        Animal cat;
+        cat = new Animal0();
         List <Animal> animals = new ArrayList<>();
         animals.add(new Dog(null, null, null));
         animals.add(new Cat(null, null, null));
@@ -31,18 +32,31 @@ public class Main {
         //     }
         // }
         Cat barsik = new Cat(null,null,null);
-        barsik.Hunt();
-        barsik.toFly();
+//        barsik.Hunt();
+//        barsik.toFly();
         Dolphin flipper = new Dolphin(null, null, null);
-        flipper.toFly();
-        flipper.toRun();
-        flipper.toSwim();
+//        flipper.toFly();
+//        flipper.toRun();
+//        flipper.toSwim();
         Pigeon pig = new Pigeon(null, null, null);
-        pig.toSwim();
-        pig.toFly();
+//        pig.toSwim();
+//        pig.toFly();
         Crocodile croc = new Crocodile(null, null, null);
-        croc.toFly();
+//        croc.toFly();
+        VetClinic vetClinic = new VetClinic();
+        vetClinic.addAnimal(barsik);
+        vetClinic.addAnimal(flipper);
+        vetClinic.addAnimal(pig);
+        vetClinic.addAnimal(croc);
 
-        
+        System.out.println("Животные, которые умеют бегать:");
+        for (Animal run: vetClinic.GetRunAnimals()) System.out.println(run.getClassName());
+
+        System.out.println("Животные, которые умеют плавать:");
+        for (Animal swim: vetClinic.GetSwimAnimals()) System.out.println(swim.getClassName());
+
+        System.out.println("Животные, которые умеют летать:");
+        for (Animal fly: vetClinic.GetFlyAnimals()) System.out.println(fly.getClassName());
+
     }
 }

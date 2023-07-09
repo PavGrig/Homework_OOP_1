@@ -2,7 +2,7 @@ package ООП.Lesson_1;
 
 import java.util.Arrays;
 
-public class Cat extends Animal{
+public class Cat extends Animal implements Swimble, Runable, Soundable{
 
     public Cat(String color, String species, Integer legsCount) {
         super(color, species, legsCount);
@@ -29,8 +29,24 @@ public class Cat extends Animal{
         Eat();
         Sleep();
     }
+//    @Override
+//    public void toFly() {
+//        System.out.println("Я не умею летать!!!");
+//    }
+
+
     @Override
-    public void toFly() {
-        System.out.println("Я не умею летать!!!");
+    public int GetSwimSpeed() {
+        return 5;
+    }
+
+    @Override
+    public int GetRunSpeed() {
+        return 15;
+    }
+
+    @Override
+    public void Sound() {
+        System.out.println("Коты говорят Мяу!!!");
     }
 }
