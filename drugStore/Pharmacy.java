@@ -56,8 +56,8 @@ public class Pharmacy implements Iterable<Component>, Comparable<Pharmacy>, Mark
     public int compareTo(Pharmacy o) {
         int pow1 = getPower(this);
         int pow2 = getPower(o);
-        String comp1 = getName(this);
-        String comp2 = getName(o);
+        StringBuilder comp1 = getName(this);
+        StringBuilder comp2 = getName(o);
 //        return Integer.compare(pow1, pow2); Альтернативная запись:
 
         if (pow1 > pow2) return 1;
@@ -71,10 +71,10 @@ public class Pharmacy implements Iterable<Component>, Comparable<Pharmacy>, Mark
         }
         return result;
     }
-    private String getName(Pharmacy pharm){
-        String result = "";
+    private StringBuilder getName(Pharmacy pharm){
+        StringBuilder result = new StringBuilder();
         for (Component elem: pharm.getComponents()) {
-            result += elem.getName();
+            result.append(elem.getName());
         }
         return result;
 
